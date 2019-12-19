@@ -1,6 +1,9 @@
 module Main where
 
-import Lib
+import System.Environment
+import Game
 
 main :: IO ()
-main = someFunc
+main = do
+    args <- getArgs
+    gameLoop (args !! 0) (args !! 1)
